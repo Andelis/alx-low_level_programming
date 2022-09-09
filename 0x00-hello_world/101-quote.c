@@ -1,13 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - prints to the standard error
  *
- * Return: Always 0 (Success)
+ * Return: 1
  */
+
 int main(void)
 {
-	write("and that piece of art is useful\" - Dora Korpar, 2015-10-19");
+	printf("and that piece of art is useful\" - Dora Korpar, 2015-10-19");
 
 	return (1);
 }

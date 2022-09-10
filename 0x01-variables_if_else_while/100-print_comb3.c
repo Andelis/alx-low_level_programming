@@ -6,7 +6,7 @@
  *
  * Return: Always 0 (Success)
  */
-int maimn(void)
+int main(void)
 {
 	int digit1; digit2;
 

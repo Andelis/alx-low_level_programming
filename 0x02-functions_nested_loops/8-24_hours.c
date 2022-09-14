@@ -17,8 +17,8 @@ void jack_bauer(void)
 			}
 			else if (x >= 10)
 			{
-				_putchar((i / 10) + '0');
-				_putchar((i % 10) + '0');
+				_putchar((x / 10) + '0');
+				_putchar((x % 10) + '0');
 			}
 			if (y < 10)
 			{
@@ -35,4 +35,4 @@ void jack_bauer(void)
 			_putchar('\n');
 		}
 	}
-
+}

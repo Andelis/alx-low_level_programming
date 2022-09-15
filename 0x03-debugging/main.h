@@ -4,6 +4,6 @@
 #include <stdio.h>
 
 void positive_or_negative(int i);
-int main(void);
+void causes_an_infinite_loop(int i);
 
 #endif /* MAIN_H */

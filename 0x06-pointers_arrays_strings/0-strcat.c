@@ -2,10 +2,10 @@
 
 /**
  * _strcat - concatenates two strings
- * @dest: string to append to
- * @src: string to add
+ * @dest: first parameter
+ * @src: second parameter
  *
- * Return: a pointer to the resulting string
+ * Return: a string
  */
 char *_strcat(char *dest, char *src)
 {
@@ -15,7 +15,10 @@ char *_strcat(char *dest, char *src)
 	b = 0;
 
 	while (dest[a] != '\0')
+	{
+		putchar(dest);
 		a++;
+	}
 
 	for (src[b] != '\0')
 	{

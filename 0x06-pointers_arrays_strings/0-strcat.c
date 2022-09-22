@@ -1,12 +1,15 @@
 #include "main.h"
 
 /**
- * _strcat - Concatenates string
+ * _strcat - Concatenates the string
  * @dest: first parameter
  * @src: second parameter
+ *
  * Return: a string
  */
+
 char *_strcat(char *dest, char *src)
+
 {
 	int a = 0, length = 0;
 

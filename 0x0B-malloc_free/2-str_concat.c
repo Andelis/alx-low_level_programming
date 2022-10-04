@@ -3,53 +3,51 @@
 #include <stdio.h>
 
 /**
-  * argstostr - convert the params passed to the program to string
-  * @ac: the argument count
-  * @av: the argument vector
+  * str_concat - Concatenates two strings of any size
+  * @s1: the first string to concatenate
+  * @s2: the second string to concatenate
   *
-  * Return: ...
+  * Return: the two strings concatenated
   */
-char *argstostr(int ac, char **av)
+char *str_concat(char *s1, char *s2)
 {
-	int ch = 0, i = 0, j = 0, k = 0;
+	int i = 0, j = 0, k = 0, l = 0;
 	char *s;
 
-	if (ac == 0 || av == NULL)
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[i])
+		i++;
+
+	while (s2[j])
+		j++;
+
+	l = i + j;
+	s = malloc((sizeof(char) * l) + 1);
+
+	if (s == NULL)
 		return (NULL);
 
-	while (i < ac)
+	j = 0;
+
+	while (k < l)
 	{
-		while (av[i][j])
+		if (k <= i)
+			s[k] = s1[k];
+
+		if (k >= i)
 		{
-			ch++;
+			s[k] = s2[j];
 			j++;
 		}
 
-		j = 0;
-		i++;
-	}
-
-	s = malloc((sizeof(char) * ch) + ac + 1);
-
-	i = 0;
-	while (av[i])
-	{
-		while (av[i][j])
-		{
-			s[k] = av[i][j];
-			k++;
-			j++;
-		}
-
-		s[k] = '\n';
-
-		j = 0;
 		k++;
-		i++;
 	}
 
-	k++;
 	s[k] = '\0';
 	return (s);
 }
-

@@ -1,73 +1,54 @@
 #include "lists.h"
 
 /**
- * dlistint_len - returns the number of elements in a dlistint_t list
- * @h: head of doubly linked list
+ * insert_dnode_at_index - inserts a new node at a given posotion
+ * @h: the pointer to the struct
+ * @idx: index of the list where the new node should be added
+ * @n: integer in the struct
  *
- * Return: number of nodes
+ * Return: Address of the new node or NULL if it failed
+ *
  */
 
-size_t dlistint_len(const dlistint_t *h)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h,
+unsigned int idx, int n)
 {
-	int count = 0;
+	dlistint_t *newnode, *current = *h, *prev;
+	unsigned int index;
 
-	while (h)
-	{
-		count++;
-		h = h->next;
-	}
-	return (count);
-}
-
-/**
- * insert_dnodeint_at_index - inserts a new node at a given position
- * @h: head of linked list
- * @idx: index
- * @n: integer value of node
- *
- * Return: address of new node, return NULL if fails
- */
-
-dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
-{
-	dlistint_t *new, *temp;
-	size_t length;
-	unsigned int i = 0;
-
-	if (h == NULL)
+	if (*h == NULL && idx != 0)
 		return (NULL);
-	if (idx == 0)
-		return (add_dnodeint(h, n));
-
-	length = dlistint_len(*h);
-	if (idx == length - 1)
-		return (add_dnodeint_end(h, n));
-
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
+	newnode = malloc(sizeof(dlistint_t));
+	if (newnode == NULL)
 		return (NULL);
-	new->n = n;
-	if (*h == NULL)
-	{
-		new->prev = NULL;
-		new->next = NULL;
-		*h = new;
-		return (new);
-	}
-	temp = *h;
-	while (temp)
-	{
-		if (i == idx)
-		{
-			new->next = temp;
-			new->prev = temp->prev;
-			temp->prev->next = new;
-			temp->prev = new;
-			return (new);
+
+	if (*h != NULL)
+	{prev = NULL;
+		while (current->prev != NULL)
+			current = current->prev;
+		for (index = 0; current != NULL && index < idx; index++)
+		{prev = current;
+			current = current->next;
 		}
-		temp = temp->next;
-		i++;
+		if (index == idx)
+		{newnode->n = n;
+			newnode->prev = prev;
+			if (current != NULL)
+				current->prev = newnode;
+			newnode->next = current;
+			if (idx == 0)
+			{*h = newnode;
+			}
+			else
+			{prev->next = newnode;
+			}
+			return (newnode);
+		}
+		return (NULL);
 	}
-	free(new);
-	return (NULL);
+	newnode->next = NULL;
+	newnode->prev = NULL;
+	newnode->n = n;
+	*h = newnode;
+	return (newnode);
 }

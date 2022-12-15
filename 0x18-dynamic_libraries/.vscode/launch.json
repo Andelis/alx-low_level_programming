@@ -3,11 +3,23 @@
   "configurations": [
     {
       "name": "C/C++ Runner: Debug Session",
+<<<<<<< HEAD
       "type": "lldb",
       "request": "launch",
       "args": [],
       "cwd": "/Users/andex/Downloads/0x18-dynamic_libraries",
       "program": "/Users/andex/Downloads/0x18-dynamic_libraries/build/Debug/outDebug"
+=======
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": true,
+      "externalConsole": false,
+      "cwd": "/Users/andex/alx-low_level_programming/alx-low_level_programming/0x18-dynamic_libraries",
+      "program": "/Users/andex/alx-low_level_programming/alx-low_level_programming/0x18-dynamic_libraries/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb"
+>>>>>>> 07a98f76a404dfb55ca957fdd3c45adceef74baf
     }
   ]
 }

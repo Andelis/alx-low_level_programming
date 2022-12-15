@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",
   "C_Cpp_Runner.debuggerPath": "lldb",
+=======
+  "C_Cpp_Runner.cCompilerPath": "gcc",
+  "C_Cpp_Runner.cppCompilerPath": "g++",
+  "C_Cpp_Runner.debuggerPath": "gdb",
+>>>>>>> 07a98f76a404dfb55ca957fdd3c45adceef74baf
   "C_Cpp_Runner.cStandard": "",
   "C_Cpp_Runner.cppStandard": "",
   "C_Cpp_Runner.msvcBatchPath": "",
@@ -9,12 +15,16 @@
   "C_Cpp_Runner.warnings": [
     "-Wall",
     "-Wextra",
+<<<<<<< HEAD
     "-Wpedantic",
     "-Wshadow",
     "-Wformat=2",
     "-Wconversion",
     "-Wnull-dereference",
     "-Wsign-conversion"
+=======
+    "-Wpedantic"
+>>>>>>> 07a98f76a404dfb55ca957fdd3c45adceef74baf
   ],
   "C_Cpp_Runner.enableWarnings": true,
   "C_Cpp_Runner.warningsAsError": false,
